@@ -81,7 +81,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen overflow-hidden bg-white flex items-center">
         <div 
@@ -91,7 +91,7 @@ const Index = () => {
             transform: `translateY(${scrollY * 0.3}px)`
           }}
         ></div>
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gray-900/60"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center animate-fade-in">
             <Badge variant="outline" className="mb-6 text-sm px-4 py-2 bg-white/10 border-white/30 text-white">
@@ -99,7 +99,7 @@ const Index = () => {
               Юридическая фирма с многолетним опытом
             </Badge>
             <h1 className="text-7xl font-bold text-white mb-8 leading-tight">
-              ГК <span className="text-blue-400">АСТРА ЛЕГАЛ</span>
+              ГК <span className="text-gray-300">АСТРА ЛЕГАЛ</span>
             </h1>
             <p className="text-2xl text-white/90 mb-12 leading-relaxed max-w-4xl mx-auto">
               Это команда талантливых юристов, которые уже более двадцати лет консультирует 
@@ -129,11 +129,11 @@ const Index = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-4 h-auto bg-blue-600 hover:bg-blue-700">
+              <Button size="lg" className="text-lg px-8 py-4 h-auto bg-gray-700 hover:bg-gray-800 text-white">
                 <Icon name="MessageCircle" size={20} className="mr-2" />
                 Получить консультацию
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto border-white text-white hover:bg-white hover:text-gray-900">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto border-white text-white hover:bg-white hover:text-gray-800">
                 <Icon name="Play" size={20} className="mr-2" />
                 О компании
               </Button>
@@ -148,11 +148,11 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-100">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16 animate-slide-up">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Наши услуги</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">Наши услуги</h2>
+            <p className="text-xl text-gray-700">
               Комплексное юридическое сопровождение для бизнеса и частных лиц
             </p>
           </div>
@@ -179,11 +179,11 @@ const Index = () => {
                           <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
                             <Icon name={service.icon} size={24} className="text-primary" />
                           </div>
-                          <CardTitle className="text-xl text-gray-900">{service.name}</CardTitle>
+                          <CardTitle className="text-xl text-gray-800">{service.name}</CardTitle>
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-600 mb-4">{service.description}</p>
+                        <p className="text-gray-700 mb-4">{service.description}</p>
                         <Button variant="outline" className="w-full group-hover:border-primary group-hover:text-primary">
                           Подробнее
                           <Icon name="ArrowRight" size={16} className="ml-2" />
@@ -203,11 +203,11 @@ const Index = () => {
                           <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
                             <Icon name={service.icon} size={24} className="text-primary" />
                           </div>
-                          <CardTitle className="text-xl text-gray-900">{service.name}</CardTitle>
+                          <CardTitle className="text-xl text-gray-800">{service.name}</CardTitle>
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-600 mb-4">{service.description}</p>
+                        <p className="text-gray-700 mb-4">{service.description}</p>
                         <Button variant="outline" className="w-full group-hover:border-primary group-hover:text-primary">
                           Подробнее
                           <Icon name="ArrowRight" size={16} className="ml-2" />
@@ -229,10 +229,10 @@ const Index = () => {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="animate-slide-up">
                 <Badge variant="outline" className="mb-4">О нашей компании</Badge>
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-4xl font-bold text-gray-800 mb-6">
                   Современный подход к юридическим услугам
                 </h2>
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
                   Мы объединяем глубокие знания права с инновационными технологиями. 
                   Наша команда состоит из опытных юристов, которые понимают вызовы современного бизнеса 
                   и готовы предложить эффективные решения.
@@ -266,8 +266,8 @@ const Index = () => {
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Почему выбирают нас</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">Почему выбирают нас</h2>
+            <p className="text-xl text-gray-700">
               Наши преимущества, которые делают нас лидером в сфере юридических услуг
             </p>
           </div>
@@ -278,7 +278,7 @@ const Index = () => {
                 <Icon name="Zap" size={28} className="text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Быстрое решение</h3>
-              <p className="text-gray-600">Используем современные технологии для ускорения процессов</p>
+              <p className="text-gray-700">Используем современные технологии для ускорения процессов</p>
             </Card>
             
             <Card className="text-center p-8 border-0 shadow-lg">
@@ -286,7 +286,7 @@ const Index = () => {
                 <Icon name="Target" size={28} className="text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Точность</h3>
-              <p className="text-gray-600">Детальный анализ каждого дела и персональный подход</p>
+              <p className="text-gray-700">Детальный анализ каждого дела и персональный подход</p>
             </Card>
             
             <Card className="text-center p-8 border-0 shadow-lg">
@@ -294,7 +294,7 @@ const Index = () => {
                 <Icon name="Award" size={28} className="text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Опыт</h3>
-              <p className="text-gray-600">Многолетний опыт в самых сложных юридических областях</p>
+              <p className="text-gray-700">Многолетний опыт в самых сложных юридических областях</p>
             </Card>
           </div>
         </div>
@@ -305,8 +305,8 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Получить консультацию</h2>
-              <p className="text-xl text-gray-600">
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">Получить консультацию</h2>
+              <p className="text-xl text-gray-700">
                 Оставьте заявку и мы свяжемся с вами в течение 15 минут
               </p>
             </div>
@@ -346,13 +346,13 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-gray-800 text-gray-100 py-16">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto text-center">
             <div className="mb-8">
-              <Icon name="Scale" size={48} className="mx-auto mb-4 text-primary" />
+              <Icon name="Scale" size={48} className="mx-auto mb-4 text-gray-400" />
               <h3 className="text-2xl font-bold mb-2">LegalTech</h3>
-              <p className="text-gray-400">Современные правовые решения</p>
+              <p className="text-gray-300">Современные правовые решения</p>
             </div>
             <div className="grid md:grid-cols-3 gap-8 mb-8">
               <div>
@@ -380,8 +380,8 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="border-t border-gray-800 pt-8">
-              <p className="text-gray-400">© 2024 LegalTech. Все права защищены.</p>
+            <div className="border-t border-gray-700 pt-8">
+              <p className="text-gray-300">© 2024 ГК АСТРА ЛЕГАЛ. Все права защищены.</p>
             </div>
           </div>
         </div>
