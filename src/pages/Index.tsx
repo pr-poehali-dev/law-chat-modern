@@ -12,10 +12,12 @@ const Index = () => {
   const [activeServiceType, setActiveServiceType] = useState('business');
   
   const businessServices = [
-    { name: 'Арбитраж', description: 'Представительство в арбитражных судах', icon: 'Scale' },
-    { name: 'Корпоративное право', description: 'Сопровождение бизнеса и сделок', icon: 'Building2' },
-    { name: 'Налоговое право', description: 'Налоговое планирование и споры', icon: 'Calculator' },
-    { name: 'Банкротство', description: 'Процедуры банкротства юрлиц', icon: 'AlertTriangle' }
+    { name: 'Недвижимость и строительство', description: 'Сопровождение сделок и строительных проектов', icon: 'Building' },
+    { name: 'IP/ИТ', description: 'Защита интеллектуальной собственности и ИТ-права', icon: 'Code' },
+    { name: 'Несостоятельность (банкротство)', description: 'Процедуры банкротства и антикризисное управление', icon: 'AlertTriangle' },
+    { name: 'Разрешение споров', description: 'Арбитражное и судебное представительство', icon: 'Scale' },
+    { name: 'Корпоративное право', description: 'Сопровождение бизнеса и корпоративных сделок', icon: 'Building2' },
+    { name: 'Налоговое и административное право', description: 'Налоговое планирование и административные споры', icon: 'Calculator' }
   ];
   
   const individualServices = [
