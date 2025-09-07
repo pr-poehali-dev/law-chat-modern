@@ -21,10 +21,14 @@ const Index = () => {
   ];
   
   const individualServices = [
-    { name: 'Семейное право', description: 'Развод, алименты, раздел имущества', icon: 'Heart' },
-    { name: 'Недвижимость', description: 'Сделки с недвижимостью', icon: 'Home' },
-    { name: 'Наследство', description: 'Оформление наследственных прав', icon: 'FileText' },
-    { name: 'Защита прав', description: 'Защита прав потребителей', icon: 'Shield' }
+    { name: 'Разрешение конфликтов', description: 'Медиация и досудебное урегулирование споров', icon: 'HandHeart' },
+    { name: 'Планирование наследства', description: 'Составление завещаний и наследственное планирование', icon: 'FileText' },
+    { name: 'Наследственные споры', description: 'Защита наследственных прав в суде', icon: 'Scale' },
+    { name: 'Семейные споры', description: 'Развод, алименты, раздел имущества', icon: 'Heart' },
+    { name: 'Жилищные споры', description: 'Споры с управляющими компаниями и соседями', icon: 'Home' },
+    { name: 'Защита прав потребителей', description: 'Возврат товаров, компенсации ущерба', icon: 'Shield' },
+    { name: 'Трудовые споры', description: 'Защита трудовых прав и взыскание зарплат', icon: 'Briefcase' },
+    { name: 'Гражданские споры', description: 'Другие имущественные и гражданские споры', icon: 'Users' }
   ];
 
   return (
