@@ -91,60 +91,56 @@ const Index = () => {
             transform: `translateY(${scrollY * 0.3}px)`
           }}
         ></div>
-        <div className="absolute inset-0 bg-gray-900/60"></div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="absolute inset-0 bg-gray-900/70"></div>
+        <div className="container mx-auto px-8 py-16 relative z-10 flex items-start justify-start min-h-screen">
           <div className="max-w-5xl mx-auto text-center animate-fade-in">
-            <Badge variant="outline" className="mb-6 text-sm px-4 py-2 bg-white/10 border-white/30 text-white">
-              <Icon name="Scale" size={16} className="mr-2" />
-              Юридическая фирма с многолетним опытом
-            </Badge>
-            <h1 className="text-7xl font-bold text-white mb-8 leading-tight">
-              ГК <span className="text-gray-300">АСТРА ЛЕГАЛ</span>
-            </h1>
-            <p className="text-2xl text-white/90 mb-12 leading-relaxed max-w-4xl mx-auto">
-              Это команда талантливых юристов, которые уже более двадцати лет консультирует 
-              предприятия и частных клиентов в самых сложных областях права.
-            </p>
+            <div className="text-left max-w-2xl">
+              <p className="text-sm text-white/70 mb-2 uppercase tracking-wide">КОМПАНИЯ</p>
+              <h1 className="text-4xl font-light text-white mb-8 leading-relaxed">
+                Maxima Legal - это команда талантливых юристов, которые уже более двадцати лет консультирует предприятия и частных клиентов в самых сложных областях права.
+              </h1>
+            </div>
             
-            {/* Animated Counters */}
-            <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
-              <div ref={experienceCounter.elementRef} className="text-center">
-                <div className="text-6xl font-bold text-blue-400 mb-2">
-                  {experienceCounter.count}+
+            {/* Stats - Minimal Style */}
+            <div className="space-y-12 max-w-2xl">
+              <div className="border-b border-white/20 pb-8">
+                <div ref={experienceCounter.elementRef} className="text-left">
+                  <div className="text-8xl font-light text-white mb-2 leading-none">
+                    {experienceCounter.count}
+                  </div>
+                  <div className="text-2xl font-light text-white mb-2">Возраст</div>
+                  <div className="text-base text-white/70">опыт работы над проектами и международный консалтинг.</div>
                 </div>
-                <div className="text-xl text-white/80">лет опыта работы</div>
               </div>
-              <div ref={avgExperienceCounter.elementRef} className="text-center">
-                <div className="text-6xl font-bold text-blue-400 mb-2">
-                  {avgExperienceCounter.count}+
+              
+              <div className="border-b border-white/20 pb-8">
+                <div ref={avgExperienceCounter.elementRef} className="text-left">
+                  <div className="text-8xl font-light text-white mb-2 leading-none">
+                    {avgExperienceCounter.count}
+                  </div>
+                  <div className="text-2xl font-light text-white mb-2">Возраст</div>
+                  <div className="text-base text-white/70">средний опыт работы с юристом.</div>
                 </div>
-                <div className="text-xl text-white/80">средний опыт юристов</div>
               </div>
-              <div ref={servicesCounter.elementRef} className="text-center">
-                <div className="text-6xl font-bold text-blue-400 mb-2">
-                  {servicesCounter.count}
+              
+              <div className="pb-8">
+                <div ref={servicesCounter.elementRef} className="text-left">
+                  <div className="text-8xl font-light text-white mb-2 leading-none">
+                    {servicesCounter.count}
+                  </div>
+                  <div className="text-2xl font-light text-white mb-2">Направления</div>
+                  <div className="text-base text-white/70">юридических услуг и консультаций.</div>
                 </div>
-                <div className="text-xl text-white/80">видов юридической поддержки</div>
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-4 h-auto bg-gray-700 hover:bg-gray-800 text-white">
-                <Icon name="MessageCircle" size={20} className="mr-2" />
-                Получить консультацию
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto border-white text-white hover:bg-white hover:text-gray-800">
-                <Icon name="Play" size={20} className="mr-2" />
-                О компании
-              </Button>
+            <div className="absolute bottom-8 left-8">
+              <p className="text-sm text-white/70">mlegal-rds.ava-case.com</p>
             </div>
           </div>
         </div>
         
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <Icon name="ChevronDown" size={32} className="text-white/60" />
-        </div>
+
       </section>
 
       {/* Services Section */}
