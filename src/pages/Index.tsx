@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -10,6 +10,55 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeServiceType, setActiveServiceType] = useState('business');
+  const [scrollY, setScrollY] = useState(0);
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Animated counter hook
+  const useAnimatedCounter = (target: number, duration: number = 2000) => {
+    const [count, setCount] = useState(0);
+    const [hasStarted, setHasStarted] = useState(false);
+    const elementRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && !hasStarted) {
+            setHasStarted(true);
+            const startTime = Date.now();
+            const animate = () => {
+              const elapsed = Date.now() - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const easeOut = 1 - Math.pow(1 - progress, 3);
+              setCount(Math.floor(target * easeOut));
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              }
+            };
+            animate();
+          }
+        },
+        { threshold: 0.5 }
+      );
+
+      if (elementRef.current) {
+        observer.observe(elementRef.current);
+      }
+
+      return () => observer.disconnect();
+    }, [target, duration, hasStarted]);
+
+    return { count, elementRef };
+  };
+
+  const experienceCounter = useAnimatedCounter(20);
+  const avgExperienceCounter = useAnimatedCounter(15);
+  const servicesCounter = useAnimatedCounter(14);
   
   const businessServices = [
     { name: 'Недвижимость и строительство', description: 'Сопровождение сделок и строительных проектов', icon: 'Building' },
@@ -34,32 +83,67 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
-        <div className="container mx-auto px-6 py-24">
-          <div className="relative z-10 max-w-4xl mx-auto text-center animate-fade-in">
-            <Badge variant="outline" className="mb-6 text-sm px-4 py-2">
-              <Icon name="Sparkles" size={16} className="mr-2" />
-              Юридические услуги нового поколения
+      <section ref={heroRef} className="relative min-h-screen overflow-hidden bg-white flex items-center">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/img/532edd36-bb2a-4dba-ba00-13ecc542e141.jpg')`,
+            transform: `translateY(${scrollY * 0.3}px)`
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-5xl mx-auto text-center animate-fade-in">
+            <Badge variant="outline" className="mb-6 text-sm px-4 py-2 bg-white/10 border-white/30 text-white">
+              <Icon name="Scale" size={16} className="mr-2" />
+              Юридическая фирма с многолетним опытом
             </Badge>
-            <h1 className="text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Современные <span className="text-primary">правовые решения</span> для вашего бизнеса
+            <h1 className="text-7xl font-bold text-white mb-8 leading-tight">
+              ГК <span className="text-blue-400">АСТРА ЛЕГАЛ</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-3xl mx-auto">
-              Мы используем инновационные подходы и передовые технологии для решения сложных юридических задач. 
-              Ваш надежный партнер в мире права.
+            <p className="text-2xl text-white/90 mb-12 leading-relaxed max-w-4xl mx-auto">
+              Это команда талантливых юристов, которые уже более двадцати лет консультирует 
+              предприятия и частных клиентов в самых сложных областях права.
             </p>
+            
+            {/* Animated Counters */}
+            <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+              <div ref={experienceCounter.elementRef} className="text-center">
+                <div className="text-6xl font-bold text-blue-400 mb-2">
+                  {experienceCounter.count}+
+                </div>
+                <div className="text-xl text-white/80">лет опыта работы</div>
+              </div>
+              <div ref={avgExperienceCounter.elementRef} className="text-center">
+                <div className="text-6xl font-bold text-blue-400 mb-2">
+                  {avgExperienceCounter.count}+
+                </div>
+                <div className="text-xl text-white/80">средний опыт юристов</div>
+              </div>
+              <div ref={servicesCounter.elementRef} className="text-center">
+                <div className="text-6xl font-bold text-blue-400 mb-2">
+                  {servicesCounter.count}
+                </div>
+                <div className="text-xl text-white/80">видов юридической поддержки</div>
+              </div>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-4 h-auto">
+              <Button size="lg" className="text-lg px-8 py-4 h-auto bg-blue-600 hover:bg-blue-700">
                 <Icon name="MessageCircle" size={20} className="mr-2" />
                 Получить консультацию
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto border-white text-white hover:bg-white hover:text-gray-900">
                 <Icon name="Play" size={20} className="mr-2" />
-                Смотреть видео
+                О компании
               </Button>
             </div>
           </div>
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <Icon name="ChevronDown" size={32} className="text-white/60" />
         </div>
       </section>
 
