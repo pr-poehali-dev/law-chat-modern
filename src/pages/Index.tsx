@@ -87,7 +87,7 @@ const Index = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://cdn.poehali.dev/files/57f491ee-ea14-4610-93a0-87646e96fcc9.png')`,
+            backgroundImage: `url('/img/ed3cf710-56da-4100-a241-f6329225e8be.jpg')`,
             transform: `translateY(${scrollY * 0.3}px)`
           }}
         ></div>
