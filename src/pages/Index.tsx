@@ -134,9 +134,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="absolute bottom-8 left-8">
-              <p className="text-sm text-white/70">mlegal-rds.ava-case.com</p>
-            </div>
+
           </div>
         </div>
         
