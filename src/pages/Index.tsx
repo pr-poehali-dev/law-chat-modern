@@ -96,7 +96,7 @@ const Index = () => {
           <div className="max-w-5xl mx-auto text-center animate-fade-in">
             <div className="text-left max-w-2xl">
               <p className="text-sm text-white/70 mb-2 uppercase tracking-wide">КОМПАНИЯ</p>
-              <h1 className="text-3xl font-light text-white mb-8 leading-relaxed">
+              <h1 className="text-2xl font-light text-white mb-8 leading-relaxed">
                 Maxima Legal - это команда талантливых юристов, которые уже более двадцати лет консультирует предприятия и частных клиентов в самых сложных областях права.
               </h1>
             </div>
