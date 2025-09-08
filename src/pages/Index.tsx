@@ -105,7 +105,7 @@ const Index = () => {
             <div className="space-y-12 max-w-2xl">
               <div className="border-b border-white/20 pb-8">
                 <div ref={experienceCounter.elementRef} className="text-left">
-                  <div className="text-3xl font-light text-white mb-2 leading-none">
+                  <div className="text-5xl font-light text-white mb-2 leading-none">
                     {experienceCounter.count}
                   </div>
                   <div className="text-2xl font-light text-white mb-2">Возраст</div>
@@ -115,7 +115,7 @@ const Index = () => {
               
               <div className="border-b border-white/20 pb-8">
                 <div ref={avgExperienceCounter.elementRef} className="text-left">
-                  <div className="text-3xl font-light text-white mb-2 leading-none">
+                  <div className="text-5xl font-light text-white mb-2 leading-none">
                     {avgExperienceCounter.count}
                   </div>
                   <div className="text-2xl font-light text-white mb-2">Возраст</div>
@@ -125,7 +125,7 @@ const Index = () => {
               
               <div className="pb-8">
                 <div ref={servicesCounter.elementRef} className="text-left">
-                  <div className="text-3xl font-light text-white mb-2 leading-none">
+                  <div className="text-5xl font-light text-white mb-2 leading-none">
                     {servicesCounter.count}
                   </div>
                   <div className="text-2xl font-light text-white mb-2">Направления</div>
