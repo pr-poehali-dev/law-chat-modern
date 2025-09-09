@@ -220,7 +220,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-primary/60"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl">
-            <h1 className="text-6xl md:text-8xl font-light text-white mb-8 leading-tight">
+            <h1 className="md:text-8xl font-light text-white mb-8 leading-tight text-5xl">
               ЗАКОН С<br />
               <span className="font-bold">ИНДИВИДУАЛЬНЫМ</span><br />
               ПОДХОДОМ
