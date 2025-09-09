@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
@@ -61,29 +60,155 @@ const Index = () => {
   const servicesCounter = useAnimatedCounter(14);
   
   const businessServices = [
-    { name: 'Недвижимость и строительство', description: 'Сопровождение сделок и строительных проектов', icon: 'Building' },
-    { name: 'IP/ИТ', description: 'Защита интеллектуальной собственности и ИТ-права', icon: 'Code' },
-    { name: 'Несостоятельность (банкротство)', description: 'Процедуры банкротства и антикризисное управление', icon: 'AlertTriangle' },
-    { name: 'Разрешение споров', description: 'Арбитражное и судебное представительство', icon: 'Scale' },
-    { name: 'Корпоративное право', description: 'Сопровождение бизнеса и корпоративных сделок', icon: 'Building2' },
-    { name: 'Налоговое и административное право', description: 'Налоговое планирование и административные споры', icon: 'Calculator' }
+    { 
+      name: 'Недвижимость и строительство', 
+      description: 'Сопровождение сделок с недвижимостью и строительными проектами',
+      icon: 'Building',
+      link: '/services/real-estate'
+    },
+    { 
+      name: 'IP/IT', 
+      description: 'Защита интеллектуальной собственности и IT-права',
+      icon: 'Code',
+      link: '/services/ip-it'
+    },
+    { 
+      name: 'Несостоятельность (банкротство)', 
+      description: 'Процедуры банкротства и антикризисное управление',
+      icon: 'AlertTriangle',
+      link: '/services/bankruptcy'
+    },
+    { 
+      name: 'Разрешение споров', 
+      description: 'Арбитражное и судебное представительство',
+      icon: 'Scale',
+      link: '/services/disputes'
+    },
+    { 
+      name: 'Общие вопросы', 
+      description: 'Комплексные юридические услуги для бизнеса',
+      icon: 'Briefcase',
+      link: '/services/general'
+    },
+    { 
+      name: 'Корпоративное право', 
+      description: 'Сопровождение корпоративных сделок и M&A',
+      icon: 'Building2',
+      link: '/services/corporate'
+    },
+    { 
+      name: 'Налоговое и административное право', 
+      description: 'Налоговое планирование и административные споры',
+      icon: 'Calculator',
+      link: '/services/tax'
+    },
+    { 
+      name: 'Уголовно-правовая защита', 
+      description: 'Защита интересов в уголовном процессе',
+      icon: 'Shield',
+      link: '/services/criminal'
+    }
   ];
   
   const individualServices = [
-    { name: 'Разрешение конфликтов', description: 'Медиация и досудебное урегулирование споров', icon: 'HandHeart' },
-    { name: 'Планирование наследства', description: 'Составление завещаний и наследственное планирование', icon: 'FileText' },
-    { name: 'Наследственные споры', description: 'Защита наследственных прав в суде', icon: 'Scale' },
-    { name: 'Семейные споры', description: 'Развод, алименты, раздел имущества', icon: 'Heart' },
-    { name: 'Жилищные споры', description: 'Споры с управляющими компаниями и соседями', icon: 'Home' },
-    { name: 'Защита прав потребителей', description: 'Возврат товаров, компенсации ущерба', icon: 'Shield' },
-    { name: 'Трудовые споры', description: 'Защита трудовых прав и взыскание зарплат', icon: 'Briefcase' },
-    { name: 'Гражданские споры', description: 'Другие имущественные и гражданские споры', icon: 'Users' }
+    { 
+      name: 'Разрешение конфликтов', 
+      description: 'Досудебное и судебное урегулирование споров',
+      icon: 'HandHeart',
+      link: '/services/conflicts'
+    },
+    { 
+      name: 'Операции с личными активами', 
+      description: 'Структурирование личных активов и инвестиций',
+      icon: 'TrendingUp',
+      link: '/services/personal-assets'
+    },
+    { 
+      name: 'Налогообложение физических лиц', 
+      description: 'Налоговое планирование для физических лиц',
+      icon: 'Calculator',
+      link: '/services/personal-tax'
+    },
+    { 
+      name: 'Персональный комплаенс', 
+      description: 'Соблюдение требований законодательства',
+      icon: 'FileCheck',
+      link: '/services/compliance'
+    },
+    { 
+      name: 'Защита личных активов и вопросы наследования', 
+      description: 'Защита имущества и планирование наследства',
+      icon: 'Heart',
+      link: '/services/inheritance-protection'
+    },
+    { 
+      name: 'Семейные споры', 
+      description: 'Развод, алименты, раздел имущества',
+      icon: 'Users',
+      link: '/services/family'
+    },
+    { 
+      name: 'Наследственные споры', 
+      description: 'Оспаривание завещаний и наследственные права',
+      icon: 'FileText',
+      link: '/services/inheritance-disputes'
+    },
+    { 
+      name: 'Жилищные споры', 
+      description: 'Споры с УК, ТСЖ и по недвижимости',
+      icon: 'Home',
+      link: '/services/housing'
+    },
+    { 
+      name: 'Споры, связанные с защитой прав потребителей', 
+      description: 'Возврат товаров, компенсации ущерба',
+      icon: 'ShoppingCart',
+      link: '/services/consumer'
+    },
+    { 
+      name: 'Трудовые споры', 
+      description: 'Защита трудовых прав и взыскание зарплат',
+      icon: 'Briefcase',
+      link: '/services/labor'
+    },
+    { 
+      name: 'Другие имущественные и гражданско-правовые споры', 
+      description: 'Возмещение ущерба, взыскание долгов',
+      icon: 'Scale',
+      link: '/services/civil'
+    },
+    { 
+      name: 'Наследственное планирование', 
+      description: 'Комплексное планирование передачи активов',
+      icon: 'FileHeart',
+      link: '/services/estate-planning'
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Icon name="Scale" size={32} className="text-primary" />
+              <h1 className="text-2xl font-bold text-primary">АСТРА ЛЕГАЛ</h1>
+            </div>
+            <nav className="hidden md:flex items-center gap-8">
+              <a href="#services" className="text-gray-700 hover:text-primary transition-colors font-medium">Услуги</a>
+              <a href="#contact" className="text-gray-700 hover:text-primary transition-colors font-medium">Контакты</a>
+              <Button size="sm">Обратная связь</Button>
+            </nav>
+            <Button variant="ghost" size="sm" className="md:hidden">
+              <Icon name="Menu" size={24} />
+            </Button>
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen overflow-hidden bg-white flex items-center">
+      <section ref={heroRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -91,94 +216,95 @@ const Index = () => {
             transform: `translateY(${scrollY * 0.3}px)`
           }}
         ></div>
-        <div className="absolute inset-0 bg-gray-900/70"></div>
-        <div className="container mx-auto px-8 py-16 relative z-10 flex items-start justify-start min-h-screen">
-          <div className="max-w-5xl mx-auto text-center animate-fade-in">
-            <div className="text-left max-w-2xl">
-              <p className="text-sm text-white/70 mb-2 uppercase tracking-wide">КОМПАНИЯ</p>
-              <h1 className="text-xl font-light text-white mb-8 leading-relaxed">
-                Maxima Legal - это команда талантливых юристов, которые уже более двадцати лет консультирует предприятия и частных клиентов в самых сложных областях права.
-              </h1>
-            </div>
-            
-            {/* Stats - Minimal Style */}
-            <div className="space-y-12 max-w-2xl">
-              <div className="border-b border-white/20 pb-8">
-                <div ref={experienceCounter.elementRef} className="text-left">
-                  <div className="text-5xl font-light text-white mb-2 leading-none">
-                    {experienceCounter.count}
-                  </div>
-                  <div className="text-2xl font-light text-white mb-2">Возраст</div>
-                  <div className="text-base text-white/70">опыт работы над проектами и международный консалтинг.</div>
-                </div>
-              </div>
-              
-              <div className="border-b border-white/20 pb-8">
-                <div ref={avgExperienceCounter.elementRef} className="text-left">
-                  <div className="text-5xl font-light text-white mb-2 leading-none">
-                    {avgExperienceCounter.count}
-                  </div>
-                  <div className="text-2xl font-light text-white mb-2">Возраст</div>
-                  <div className="text-base text-white/70">средний опыт работы с юристом.</div>
-                </div>
-              </div>
-              
-              <div className="pb-8">
-                <div ref={servicesCounter.elementRef} className="text-left">
-                  <div className="text-5xl font-light text-white mb-2 leading-none">
-                    {servicesCounter.count}
-                  </div>
-                  <div className="text-2xl font-light text-white mb-2">Направления</div>
-                  <div className="text-base text-white/70">юридических услуг и консультаций.</div>
-                </div>
-              </div>
-            </div>
-            
-
+        <div className="absolute inset-0 bg-primary/80"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl">
+            <h1 className="text-6xl md:text-8xl font-light text-white mb-8 leading-tight">
+              ЗАКОН С<br />
+              <span className="font-bold">ИНДИВИДУАЛЬНЫМ</span><br />
+              ПОДХОДОМ
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl font-light leading-relaxed">
+              Астра Легал — юридическая фирма с более чем 20-летним опытом 
+              сопровождения бизнеса и частных клиентов.
+            </p>
+            <Button size="lg" className="h-14 px-8 text-lg bg-white text-primary hover:bg-gray-100">
+              Наши услуги
+              <Icon name="ArrowDown" size={20} className="ml-2" />
+            </Button>
           </div>
         </div>
-        
+      </section>
 
+      {/* Statistics Section */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-16">
+              <div ref={experienceCounter.elementRef} className="text-center">
+                <div className="text-7xl font-light text-primary mb-4">
+                  {experienceCounter.count}
+                </div>
+                <div className="text-2xl font-medium text-gray-800 mb-2">ЛЕТ ОПЫТА</div>
+                <div className="text-gray-600 text-lg">в проектах и международном консалтинге</div>
+              </div>
+              
+              <div ref={avgExperienceCounter.elementRef} className="text-center">
+                <div className="text-7xl font-light text-primary mb-4">
+                  {avgExperienceCounter.count}
+                </div>
+                <div className="text-2xl font-medium text-gray-800 mb-2">ЛЕТ СТАЖА</div>
+                <div className="text-gray-600 text-lg">средний стаж наших юристов</div>
+              </div>
+              
+              <div ref={servicesCounter.elementRef} className="text-center">
+                <div className="text-7xl font-light text-primary mb-4">
+                  {servicesCounter.count}
+                </div>
+                <div className="text-2xl font-medium text-gray-800 mb-2">НАПРАВЛЕНИЙ</div>
+                <div className="text-gray-600 text-lg">юридического сопровождения</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-gray-100">
+      <section id="services" className="py-32 bg-gray-50">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16 animate-slide-up">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">Наши услуги</h2>
-            <p className="text-xl text-gray-700">
+          <div className="max-w-3xl mx-auto text-center mb-20">
+            <h2 className="text-5xl font-light text-gray-800 mb-6">НАШИ УСЛУГИ</h2>
+            <p className="text-xl text-gray-700 font-light">
               Комплексное юридическое сопровождение для бизнеса и частных лиц
             </p>
           </div>
           
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <Tabs value={activeServiceType} onValueChange={setActiveServiceType} className="w-full">
-              <TabsList className="grid w-full grid-cols-2 mb-12 h-14">
-                <TabsTrigger value="business" className="text-base py-3">
-                  <Icon name="Building2" size={20} className="mr-2" />
+              <TabsList className="grid w-full grid-cols-2 mb-16 h-16 max-w-md mx-auto">
+                <TabsTrigger value="business" className="text-lg py-4">
                   Для компаний
                 </TabsTrigger>
-                <TabsTrigger value="individual" className="text-base py-3">
-                  <Icon name="User" size={20} className="mr-2" />
+                <TabsTrigger value="individual" className="text-lg py-4">
                   Для физических лиц
                 </TabsTrigger>
               </TabsList>
               
               <TabsContent value="business" className="mt-0">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {businessServices.map((service, index) => (
-                    <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
+                    <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 cursor-pointer">
                       <CardHeader className="pb-4">
-                        <div className="flex items-center gap-4">
-                          <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
-                            <Icon name={service.icon} size={24} className="text-primary" />
+                        <div className="mb-4">
+                          <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            <Icon name={service.icon} size={24} className="text-primary group-hover:text-white" />
                           </div>
-                          <CardTitle className="text-xl text-gray-800">{service.name}</CardTitle>
                         </div>
+                        <CardTitle className="text-lg font-semibold text-gray-800 leading-tight">{service.name}</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-700 mb-4">{service.description}</p>
-                        <Button variant="outline" className="w-full group-hover:border-primary group-hover:text-primary">
+                        <p className="text-gray-600 mb-4 text-sm">{service.description}</p>
+                        <Button variant="ghost" size="sm" className="w-full justify-start p-0 h-auto text-primary font-medium">
                           Подробнее
                           <Icon name="ArrowRight" size={16} className="ml-2" />
                         </Button>
@@ -189,20 +315,20 @@ const Index = () => {
               </TabsContent>
               
               <TabsContent value="individual" className="mt-0">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {individualServices.map((service, index) => (
-                    <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
+                    <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 cursor-pointer">
                       <CardHeader className="pb-4">
-                        <div className="flex items-center gap-4">
-                          <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
-                            <Icon name={service.icon} size={24} className="text-primary" />
+                        <div className="mb-4">
+                          <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            <Icon name={service.icon} size={24} className="text-primary group-hover:text-white" />
                           </div>
-                          <CardTitle className="text-xl text-gray-800">{service.name}</CardTitle>
                         </div>
+                        <CardTitle className="text-lg font-semibold text-gray-800 leading-tight">{service.name}</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-700 mb-4">{service.description}</p>
-                        <Button variant="outline" className="w-full group-hover:border-primary group-hover:text-primary">
+                        <p className="text-gray-600 mb-4 text-sm">{service.description}</p>
+                        <Button variant="ghost" size="sm" className="w-full justify-start p-0 h-auto text-primary font-medium">
                           Подробнее
                           <Icon name="ArrowRight" size={16} className="ml-2" />
                         </Button>
@@ -216,122 +342,44 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Us Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="animate-slide-up">
-                <Badge variant="outline" className="mb-4">О нашей компании</Badge>
-                <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                  Современный подход к юридическим услугам
-                </h2>
-                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                  Мы объединяем глубокие знания права с инновационными технологиями. 
-                  Наша команда состоит из опытных юристов, которые понимают вызовы современного бизнеса 
-                  и готовы предложить эффективные решения.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Icon name="CheckCircle" size={20} className="text-primary" />
-                    <span className="text-gray-700">Более 500 успешных дел</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Icon name="CheckCircle" size={20} className="text-primary" />
-                    <span className="text-gray-700">Команда из 15+ экспертов</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Icon name="CheckCircle" size={20} className="text-primary" />
-                    <span className="text-gray-700">Работаем с 2015 года</span>
-                  </div>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-8 h-96 flex items-center justify-center">
-                  <Icon name="Scale" size={120} className="text-primary/30" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">Почему выбирают нас</h2>
-            <p className="text-xl text-gray-700">
-              Наши преимущества, которые делают нас лидером в сфере юридических услуг
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="text-center p-8 border-0 shadow-lg">
-              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                <Icon name="Zap" size={28} className="text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Быстрое решение</h3>
-              <p className="text-gray-700">Используем современные технологии для ускорения процессов</p>
-            </Card>
-            
-            <Card className="text-center p-8 border-0 shadow-lg">
-              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                <Icon name="Target" size={28} className="text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Точность</h3>
-              <p className="text-gray-700">Детальный анализ каждого дела и персональный подход</p>
-            </Card>
-            
-            <Card className="text-center p-8 border-0 shadow-lg">
-              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                <Icon name="Award" size={28} className="text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Опыт</h3>
-              <p className="text-gray-700">Многолетний опыт в самых сложных юридических областях</p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Form Section */}
-      <section className="py-24 bg-white">
+      <section id="contact" className="py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">Получить консультацию</h2>
-              <p className="text-xl text-gray-700">
+              <h2 className="text-5xl font-light text-gray-800 mb-6">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
+              <p className="text-xl text-gray-700 font-light">
                 Оставьте заявку и мы свяжемся с вами в течение 15 минут
               </p>
             </div>
             
-            <Card className="p-8 shadow-lg border-0">
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Ваше имя</Label>
-                    <Input id="name" placeholder="Введите ваше имя" className="h-12" />
+            <Card className="p-12 shadow-xl border-0">
+              <form className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                    <Label htmlFor="name" className="text-base font-medium">Ваше имя</Label>
+                    <Input id="name" placeholder="Введите ваше имя" className="h-14 text-base" />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Телефон</Label>
-                    <Input id="phone" placeholder="+7 (999) 123-45-67" className="h-12" />
+                  <div className="space-y-3">
+                    <Label htmlFor="phone" className="text-base font-medium">Телефон</Label>
+                    <Input id="phone" placeholder="+7 (999) 123-45-67" className="h-14 text-base" />
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="your@email.com" className="h-12" />
+                <div className="space-y-3">
+                  <Label htmlFor="email" className="text-base font-medium">Email</Label>
+                  <Input id="email" type="email" placeholder="your@email.com" className="h-14 text-base" />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Описание вашего вопроса</Label>
+                <div className="space-y-3">
+                  <Label htmlFor="message" className="text-base font-medium">Описание вашего вопроса</Label>
                   <Textarea 
                     id="message" 
                     placeholder="Расскажите о вашей ситуации..." 
-                    className="min-h-32 resize-none"
+                    className="min-h-36 resize-none text-base"
                   />
                 </div>
-                <Button className="w-full h-12 text-lg">
-                  <Icon name="Send" size={20} className="mr-2" />
-                  Отправить заявку
+                <Button className="w-full h-16 text-lg font-medium">
+                  <Icon name="Send" size={20} className="mr-3" />
+                  ОТПРАВИТЬ ЗАЯВКУ
                 </Button>
               </form>
             </Card>
@@ -340,42 +388,63 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-gray-100 py-16">
+      <footer className="bg-primary text-white py-20">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto text-center">
-            <div className="mb-8">
-              <Icon name="Scale" size={48} className="mx-auto mb-4 text-gray-400" />
-              <h3 className="text-2xl font-bold mb-2">LegalTech</h3>
-              <p className="text-gray-300">Современные правовые решения</p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-4 gap-12 mb-16">
+              <div className="md:col-span-1">
+                <div className="flex items-center gap-3 mb-6">
+                  <Icon name="Scale" size={32} className="text-white" />
+                  <h3 className="text-2xl font-bold">АСТРА ЛЕГАЛ</h3>
+                </div>
+                <p className="text-white/80 text-lg">Современные правовые решения</p>
+              </div>
+              
               <div>
-                <h4 className="font-semibold mb-4">Контакты</h4>
-                <div className="space-y-2 text-gray-400">
-                  <p>+7 (495) 123-45-67</p>
-                  <p>info@legaltech.ru</p>
-                  <p>Москва, ул. Примерная, 10</p>
+                <h4 className="font-semibold mb-6 text-lg">КОНТАКТЫ</h4>
+                <div className="space-y-3 text-white/80">
+                  <p className="flex items-center gap-2">
+                    <Icon name="Phone" size={16} />
+                    8-918-480-01-67
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <Icon name="Mail" size={16} />
+                    astartes.lawyers@gmail.com
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <Icon name="MapPin" size={16} />
+                    г. Краснодар, ул. Калинина, 190
+                  </p>
                 </div>
               </div>
+              
               <div>
-                <h4 className="font-semibold mb-4">Услуги</h4>
-                <div className="space-y-2 text-gray-400">
-                  <p>Арбитраж</p>
+                <h4 className="font-semibold mb-6 text-lg">УСЛУГИ</h4>
+                <div className="space-y-3 text-white/80">
                   <p>Корпоративное право</p>
+                  <p>Арбитражные споры</p>
+                  <p>Недвижимость</p>
                   <p>Семейное право</p>
                 </div>
               </div>
+              
               <div>
-                <h4 className="font-semibold mb-4">Режим работы</h4>
-                <div className="space-y-2 text-gray-400">
+                <h4 className="font-semibold mb-6 text-lg">РЕЖИМ РАБОТЫ</h4>
+                <div className="space-y-3 text-white/80">
                   <p>Пн-Пт: 9:00 - 20:00</p>
                   <p>Сб: 10:00 - 16:00</p>
                   <p>Вс: выходной</p>
                 </div>
               </div>
             </div>
-            <div className="border-t border-gray-700 pt-8">
-              <p className="text-gray-300">© 2024 ГК АСТРА ЛЕГАЛ. Все права защищены.</p>
+            
+            <div className="border-t border-white/20 pt-8">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p className="text-white/80">© 2025 АСТРА ЛЕГАЛ. Все права защищены.</p>
+                <div className="flex gap-6 text-white/80">
+                  <a href="#" className="hover:text-white transition-colors">Политика конфиденциальности</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
