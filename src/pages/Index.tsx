@@ -213,10 +213,11 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url('https://cdn.poehali.dev/files/b1488318-4d82-4d14-bce8-9cb11f8d2ec9.png')`,
-            transform: `translateY(${scrollY * 0.3}px)`
+            transform: `translateY(${scrollY * 0.3}px)`,
+            filter: 'contrast(1.2) brightness(1.1) saturate(1.1)'
           }}
         ></div>
-        <div className="absolute inset-0 bg-primary/80"></div>
+        <div className="absolute inset-0 bg-primary/60"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl">
             <h1 className="text-6xl md:text-8xl font-light text-white mb-8 leading-tight">
