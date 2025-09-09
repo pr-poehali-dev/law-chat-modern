@@ -247,7 +247,7 @@ const Index = () => {
                   {experienceCounter.count}
                 </div>
                 <div className="text-2xl font-medium text-gray-800 mb-2">ЛЕТ ОПЫТА</div>
-                <div className="text-gray-600 text-lg">в проектах и международном консалтинге</div>
+                <div className="text-gray-600 text-lg bg-[#ffffff]">в юридических проектах</div>
               </div>
               
               <div ref={avgExperienceCounter.elementRef} className="text-center">
