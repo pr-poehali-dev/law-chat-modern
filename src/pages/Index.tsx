@@ -195,7 +195,7 @@ const Index = () => {
               <img 
                 src="https://cdn.poehali.dev/files/7c754eec-60a4-4764-b888-397d925b0fa2.png" 
                 alt="АСТРА ЛЕГАЛ" 
-                className="h-60 w-auto"
+                className="h-12 w-auto"
               />
             </div>
             <nav className="hidden md:flex items-center gap-8">
