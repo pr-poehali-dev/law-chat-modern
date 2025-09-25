@@ -191,8 +191,43 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Icon name="Scale" size={32} className="text-primary" />
+            <div className="flex items-center gap-4">
+              <div className="relative">
+                <svg width="64" height="64" viewBox="0 0 128 128" className="text-primary">
+                  {/* Hexagonal background */}
+                  <polygon 
+                    points="64,8 108,32 108,80 64,104 20,80 20,32" 
+                    fill="currentColor" 
+                    className="opacity-10"
+                  />
+                  <polygon 
+                    points="64,8 108,32 108,80 64,104 20,80 20,32" 
+                    stroke="currentColor" 
+                    strokeWidth="3" 
+                    fill="none"
+                  />
+                  
+                  {/* Letter A */}
+                  <path 
+                    d="M35 78 L45 45 L52 45 L62 78 L57 78 L55 70 L42 70 L40 78 Z M44 62 L53 62 L48.5 48 Z" 
+                    fill="currentColor"
+                    className="font-bold"
+                  />
+                  
+                  {/* Letter L */}
+                  <path 
+                    d="M68 45 L73 45 L73 73 L88 73 L88 78 L68 78 Z" 
+                    fill="currentColor"
+                    className="font-bold"
+                  />
+                  
+                  {/* Decorative geometric elements */}
+                  <circle cx="64" cy="28" r="2.5" fill="currentColor" className="opacity-60" />
+                  <circle cx="38" cy="56" r="1.8" fill="currentColor" className="opacity-40" />
+                  <circle cx="90" cy="56" r="1.8" fill="currentColor" className="opacity-40" />
+                  <circle cx="64" cy="96" r="2.5" fill="currentColor" className="opacity-60" />
+                </svg>
+              </div>
               <h1 className="text-2xl font-bold text-primary">АСТРА ЛЕГАЛ</h1>
             </div>
             <nav className="hidden md:flex items-center gap-8">
