@@ -208,62 +208,98 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700">
+        {/* Geometric background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-y-12"></div>
+          <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-amber-500/20 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-0 w-80 h-80 bg-gradient-to-tr from-blue-500/20 to-transparent rounded-full blur-3xl"></div>
+        </div>
+        
+        {/* Modern architectural image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
-            backgroundImage: `url('https://cdn.poehali.dev/files/b1488318-4d82-4d14-bce8-9cb11f8d2ec9.png')`,
-            transform: `translateY(${scrollY * 0.3}px)`,
-            filter: 'contrast(1.2) brightness(1.1) saturate(1.1)'
+            backgroundImage: `url('https://cdn.poehali.dev/files/f7aee24a-c2c8-4f45-8382-ba5ea6945287.png')`,
+            transform: `translateY(${scrollY * 0.2}px)`
           }}
         ></div>
-        <div className="absolute inset-0 bg-primary/60"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl">
-            <h1 className="md:text-8xl font-light text-white mb-8 leading-tight text-5xl">
-              ЗАКОН С<br />
-              <span className="font-bold">ИНДИВИДУАЛЬНЫМ</span><br />
-              ПОДХОДОМ
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl font-light leading-relaxed">
-              Астра Легал — юридическая фирма с более чем 20-летним опытом 
-              сопровождения бизнеса и частных клиентов.
-            </p>
-            <Button size="lg" className="h-14 px-8 text-lg bg-white text-primary hover:bg-gray-100">
-              Наши услуги
-              <Icon name="ArrowDown" size={20} className="ml-2" />
-            </Button>
+        
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900/90"></div>
+        
+        <div className="relative z-10 min-h-screen flex items-center">
+          <div className="container mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Left Column - Main Content */}
+              <div className="space-y-8">
+                <div className="space-y-2">
+                  <p className="text-slate-400 text-sm font-medium tracking-wider uppercase">Компания</p>
+                  <h1 className="text-6xl md:text-7xl font-light text-white leading-tight tracking-tight">
+                    Право с
+                    <span className="block font-light">особым</span>
+                    <span className="block font-light">подходом.</span>
+                  </h1>
+                </div>
+                
+                {/* Scroll indicator */}
+                <div className="flex items-center gap-3 text-slate-400">
+                  <span className="text-sm font-medium">Прокрутите для изучения</span>
+                  <button 
+                    onClick={() => {
+                      const servicesSection = document.getElementById('services');
+                      servicesSection?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="w-12 h-12 rounded-full border border-slate-600 flex items-center justify-center hover:border-slate-400 hover:bg-slate-800 transition-all duration-300 group"
+                  >
+                    <Icon name="ArrowDown" size={16} className="group-hover:translate-y-1 transition-transform duration-300" />
+                  </button>
+                </div>
+              </div>
+              
+              {/* Right Column - Description */}
+              <div className="space-y-8">
+                <div className="space-y-6">
+                  <p className="text-lg text-slate-300 leading-relaxed">
+                    Максима Лигал — команда талантливых юристов, которые более двадцати лет консультируют бизнес и частных клиентов в самых сложных областях права.
+                  </p>
+                  
+                  <div className="flex justify-end">
+                    <span className="text-slate-500 text-sm font-mono">1.1</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Statistics Section */}
-      <section className="py-32 bg-white">
+      <section className="py-24 bg-slate-100">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-3 gap-16">
               <div ref={experienceCounter.elementRef} className="text-center">
-                <div className="text-7xl font-light text-primary mb-4">
+                <div className="text-7xl font-light text-slate-900 mb-4">
                   {experienceCounter.count}
                 </div>
-                <div className="text-2xl font-medium text-gray-800 mb-2">ЛЕТ ОПЫТА</div>
-                <div className="text-gray-600 text-lg bg-[#ffffff]">в юридических проектах</div>
+                <div className="text-2xl font-medium text-slate-800 mb-2">ЛЕТ ОПЫТА</div>
+                <div className="text-slate-600 text-lg">в юридических проектах</div>
               </div>
               
               <div ref={avgExperienceCounter.elementRef} className="text-center">
-                <div className="text-7xl font-light text-primary mb-4">
+                <div className="text-7xl font-light text-slate-900 mb-4">
                   {avgExperienceCounter.count}
                 </div>
-                <div className="text-2xl font-medium text-gray-800 mb-2">ЛЕТ СТАЖА</div>
-                <div className="text-gray-600 text-lg">средний стаж наших юристов</div>
+                <div className="text-2xl font-medium text-slate-800 mb-2">ЛЕТ СТАЖА</div>
+                <div className="text-slate-600 text-lg">средний стаж наших юристов</div>
               </div>
               
               <div ref={servicesCounter.elementRef} className="text-center">
-                <div className="text-7xl font-light text-primary mb-4">
+                <div className="text-7xl font-light text-slate-900 mb-4">
                   {servicesCounter.count}
                 </div>
-                <div className="text-2xl font-medium text-gray-800 mb-2">НАПРАВЛЕНИЙ</div>
-                <div className="text-gray-600 text-lg">юридического сопровождения</div>
+                <div className="text-2xl font-medium text-slate-800 mb-2">НАПРАВЛЕНИЙ</div>
+                <div className="text-slate-600 text-lg">юридического сопровождения</div>
               </div>
             </div>
           </div>
@@ -271,22 +307,22 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-32 bg-gray-50">
+      <section id="services" className="py-24 bg-slate-50">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-20">
-            <h2 className="text-5xl font-light text-gray-800 mb-6">НАШИ УСЛУГИ</h2>
-            <p className="text-xl text-gray-700 font-light">
-              Комплексное юридическое сопровождение для бизнеса и частных лиц
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-8">Наши услуги</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Предоставляем полный спектр юридических услуг для успешного развития вашего бизнеса
             </p>
           </div>
           
           <div className="max-w-7xl mx-auto">
             <Tabs value={activeServiceType} onValueChange={setActiveServiceType} className="w-full">
-              <TabsList className="grid w-full grid-cols-2 mb-16 h-16 max-w-md mx-auto">
-                <TabsTrigger value="business" className="text-lg py-4">
+              <TabsList className="grid w-full grid-cols-2 mb-16 h-16 max-w-md mx-auto bg-slate-200">
+                <TabsTrigger value="business" className="text-lg py-4 data-[state=active]:bg-slate-900 data-[state=active]:text-white">
                   Для компаний
                 </TabsTrigger>
-                <TabsTrigger value="individual" className="text-lg py-4">
+                <TabsTrigger value="individual" className="text-lg py-4 data-[state=active]:bg-slate-900 data-[state=active]:text-white">
                   Для физических лиц
                 </TabsTrigger>
               </TabsList>
@@ -294,18 +330,18 @@ const Index = () => {
               <TabsContent value="business" className="mt-0">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {businessServices.map((service, index) => (
-                    <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 cursor-pointer">
+                    <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 cursor-pointer bg-white hover:bg-slate-900 hover:text-white">
                       <CardHeader className="pb-4">
                         <div className="mb-4">
-                          <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                            <Icon name={service.icon} size={24} className="text-primary group-hover:text-white" />
+                          <div className="w-14 h-14 bg-slate-100 rounded-xl flex items-center justify-center group-hover:bg-slate-800 group-hover:text-white transition-all duration-300">
+                            <Icon name={service.icon} size={24} className="text-slate-900 group-hover:text-white" />
                           </div>
                         </div>
-                        <CardTitle className="text-lg font-semibold text-gray-800 leading-tight">{service.name}</CardTitle>
+                        <CardTitle className="text-lg font-semibold text-slate-900 group-hover:text-white leading-tight">{service.name}</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-600 mb-4 text-sm">{service.description}</p>
-                        <Button variant="ghost" size="sm" className="w-full justify-start p-0 h-auto text-primary font-medium">
+                        <p className="text-slate-600 group-hover:text-slate-300 mb-4 text-sm">{service.description}</p>
+                        <Button variant="ghost" size="sm" className="w-full justify-start p-0 h-auto text-slate-900 group-hover:text-slate-300 font-medium">
                           Подробнее
                           <Icon name="ArrowRight" size={16} className="ml-2" />
                         </Button>
@@ -318,18 +354,18 @@ const Index = () => {
               <TabsContent value="individual" className="mt-0">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {individualServices.map((service, index) => (
-                    <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 cursor-pointer">
+                    <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 cursor-pointer bg-white hover:bg-slate-900 hover:text-white">
                       <CardHeader className="pb-4">
                         <div className="mb-4">
-                          <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                            <Icon name={service.icon} size={24} className="text-primary group-hover:text-white" />
+                          <div className="w-14 h-14 bg-slate-100 rounded-xl flex items-center justify-center group-hover:bg-slate-800 group-hover:text-white transition-all duration-300">
+                            <Icon name={service.icon} size={24} className="text-slate-900 group-hover:text-white" />
                           </div>
                         </div>
-                        <CardTitle className="text-lg font-semibold text-gray-800 leading-tight">{service.name}</CardTitle>
+                        <CardTitle className="text-lg font-semibold text-slate-900 group-hover:text-white leading-tight">{service.name}</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-600 mb-4 text-sm">{service.description}</p>
-                        <Button variant="ghost" size="sm" className="w-full justify-start p-0 h-auto text-primary font-medium">
+                        <p className="text-slate-600 group-hover:text-slate-300 mb-4 text-sm">{service.description}</p>
+                        <Button variant="ghost" size="sm" className="w-full justify-start p-0 h-auto text-slate-900 group-hover:text-slate-300 font-medium">
                           Подробнее
                           <Icon name="ArrowRight" size={16} className="ml-2" />
                         </Button>
@@ -344,43 +380,43 @@ const Index = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact" className="py-32 bg-white">
+      <section id="contact" className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-5xl font-light text-gray-800 mb-6">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
-              <p className="text-xl text-gray-700 font-light">
+              <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">Получить консультацию</h2>
+              <p className="text-xl text-slate-600 font-light">
                 Оставьте заявку и мы свяжемся с вами в течение 15 минут
               </p>
             </div>
             
-            <Card className="p-12 shadow-xl border-0">
+            <Card className="p-12 shadow-2xl border-0 bg-slate-50">
               <form className="space-y-8">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-3">
-                    <Label htmlFor="name" className="text-base font-medium">Ваше имя</Label>
-                    <Input id="name" placeholder="Введите ваше имя" className="h-14 text-base" />
+                    <Label htmlFor="name" className="text-base font-medium text-slate-700">Ваше имя</Label>
+                    <Input id="name" placeholder="Введите ваше имя" className="h-14 text-base bg-white" />
                   </div>
                   <div className="space-y-3">
-                    <Label htmlFor="phone" className="text-base font-medium">Телефон</Label>
-                    <Input id="phone" placeholder="+7 (999) 123-45-67" className="h-14 text-base" />
+                    <Label htmlFor="phone" className="text-base font-medium text-slate-700">Телефон</Label>
+                    <Input id="phone" placeholder="+7 (999) 123-45-67" className="h-14 text-base bg-white" />
                   </div>
                 </div>
                 <div className="space-y-3">
-                  <Label htmlFor="email" className="text-base font-medium">Email</Label>
-                  <Input id="email" type="email" placeholder="your@email.com" className="h-14 text-base" />
+                  <Label htmlFor="email" className="text-base font-medium text-slate-700">Email</Label>
+                  <Input id="email" type="email" placeholder="your@email.com" className="h-14 text-base bg-white" />
                 </div>
                 <div className="space-y-3">
-                  <Label htmlFor="message" className="text-base font-medium">Описание вашего вопроса</Label>
+                  <Label htmlFor="message" className="text-base font-medium text-slate-700">Описание вашего вопроса</Label>
                   <Textarea 
                     id="message" 
                     placeholder="Расскажите о вашей ситуации..." 
-                    className="min-h-36 resize-none text-base"
+                    className="min-h-36 resize-none text-base bg-white"
                   />
                 </div>
-                <Button className="w-full h-16 text-lg font-medium">
+                <Button className="w-full h-16 text-lg font-medium bg-slate-900 hover:bg-slate-800">
                   <Icon name="Send" size={20} className="mr-3" />
-                  ОТПРАВИТЬ ЗАЯВКУ
+                  Отправить заявку
                 </Button>
               </form>
             </Card>
@@ -389,14 +425,14 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-white py-20">
+      <footer className="bg-slate-900 text-white py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-4 gap-12 mb-16">
               <div className="md:col-span-1">
                 <div className="flex items-center gap-3 mb-6">
                   <Icon name="Scale" size={32} className="text-white" />
-                  <h3 className="text-2xl font-bold">АСТРА ЛЕГАЛ</h3>
+                  <h3 className="text-2xl font-bold">МАКСИМА ЛИГАЛ</h3>
                 </div>
                 <p className="text-white/80 text-lg">Современные правовые решения</p>
               </div>
