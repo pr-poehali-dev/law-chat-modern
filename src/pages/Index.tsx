@@ -186,21 +186,21 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-slate-900/95 backdrop-blur-sm z-50 border-b border-slate-700">
+      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <Icon name="Scale" size={32} className="text-amber-400" />
-              <h1 className="text-2xl font-bold text-white tracking-tight">МАКСИМА ЛИГАЛ</h1>
+              <Icon name="Scale" size={32} className="text-primary" />
+              <h1 className="text-2xl font-bold text-primary">АСТРА ЛЕГАЛ</h1>
             </div>
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#services" className="text-slate-300 hover:text-amber-400 transition-colors duration-300 font-medium tracking-wide">Услуги</a>
-              <a href="#contact" className="text-slate-300 hover:text-amber-400 transition-colors duration-300 font-medium tracking-wide">Контакты</a>
-              <Button size="sm" className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold shadow-glow">Обратная связь</Button>
+              <a href="#services" className="text-gray-700 hover:text-primary transition-colors font-medium">Услуги</a>
+              <a href="#contact" className="text-gray-700 hover:text-primary transition-colors font-medium">Контакты</a>
+              <Button size="sm">Обратная связь</Button>
             </nav>
-            <Button variant="ghost" size="sm" className="md:hidden text-white">
+            <Button variant="ghost" size="sm" className="md:hidden">
               <Icon name="Menu" size={24} />
             </Button>
           </div>
@@ -208,211 +208,106 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen overflow-hidden bg-slate-900">
-        {/* Enhanced geometric background pattern */}
-        <div className="absolute inset-0">
-          {/* Multi-layered animated gradient orbs */}
-          <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-amber-500/40 to-orange-500/30 rounded-full blur-3xl animate-gradient-pulse"></div>
-          <div className="absolute bottom-20 left-0 w-80 h-80 bg-gradient-to-tr from-blue-500/40 to-cyan-500/30 rounded-full blur-3xl animate-gradient-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-purple-500/30 to-pink-500/20 rounded-full blur-3xl animate-gradient-pulse" style={{animationDelay: '2s'}}></div>
-          
-          {/* Pure geometric architectural elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            {/* Animated geometric shapes */}
-            <div 
-              className="absolute top-20 right-20 w-64 h-64 border-2 border-amber-400/30 rounded-lg rotate-12 animate-pulse" 
-              style={{transform: `translateY(${scrollY * 0.1}px) rotate(12deg)`, animationDuration: '4s'}}
-            ></div>
-            <div 
-              className="absolute top-40 right-40 w-32 h-32 border border-blue-400/25 rounded-lg -rotate-12 animate-pulse" 
-              style={{transform: `translateY(${scrollY * 0.15}px) rotate(-12deg)`, animationDuration: '6s'}}
-            ></div>
-            <div 
-              className="absolute bottom-32 left-32 w-48 h-48 border border-amber-400/15 rounded-lg rotate-45 animate-pulse" 
-              style={{transform: `translateY(${scrollY * -0.1}px) rotate(45deg)`, animationDuration: '8s'}}
-            ></div>
-            
-            {/* Floating rectangles */}
-            <div 
-              className="absolute top-1/3 left-1/4 w-24 h-3 bg-gradient-to-r from-amber-400/40 to-orange-500/40 animate-pulse rounded-full" 
-              style={{transform: `translateX(${scrollY * 0.05}px)`, animationDuration: '5s'}}
-            ></div>
-            <div 
-              className="absolute bottom-1/3 right-1/4 w-32 h-3 bg-gradient-to-r from-blue-400/40 to-cyan-500/40 animate-pulse rounded-full" 
-              style={{transform: `translateX(${scrollY * -0.05}px)`, animationDuration: '7s'}}
-            ></div>
-            
-            {/* Modern architectural lines */}
-            <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-400/20 to-transparent"></div>
-            <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent"></div>
-            <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-amber-400/10 to-transparent"></div>
-            <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-400/10 to-transparent"></div>
-          </div>
-          
-          {/* Enhanced geometric grid pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `
-                linear-gradient(rgba(245,158,11,0.2) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(245,158,11,0.2) 1px, transparent 1px)
-              `,
-              backgroundSize: '60px 60px'
-            }}></div>
-          </div>
-          
-          {/* Diagonal architectural elements */}
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-amber-500/8 to-transparent transform -skew-y-12"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-blue-500/8 to-transparent transform skew-y-12"></div>
-        </div>
-        
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/95 via-slate-900/75 to-slate-900/95"></div>
-        
-        <div className="relative z-10 min-h-screen flex items-center">
-          <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-24 items-center">
-              {/* Left Column - Main Content */}
-              <div className="space-y-12">
-                <div className="space-y-6">
-                  <p className="text-amber-400 text-sm font-bold tracking-[0.4em] uppercase animate-fade-in">Компания</p>
-                  <h1 className="text-6xl md:text-8xl font-extralight text-white leading-[0.85] tracking-tight animate-fade-in" style={{animationDelay: '0.3s'}}>
-                    Право с
-                    <span className="block font-extralight bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 bg-clip-text text-transparent animate-gradient-pulse">особым</span>
-                    <span className="block font-extralight">подходом.</span>
-                  </h1>
-                </div>
-                
-                {/* Enhanced scroll indicator with better styling */}
-                <div className="flex items-center gap-6 text-slate-300 animate-fade-in" style={{animationDelay: '0.8s'}}>
-                  <span className="text-sm font-medium tracking-wide">Прокрутите для изучения</span>
-                  <button 
-                    onClick={() => {
-                      const servicesSection = document.getElementById('services');
-                      servicesSection?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="group relative w-16 h-16 rounded-full border-2 border-amber-400/60 flex items-center justify-center hover:border-amber-400 hover:bg-amber-400/10 hover:shadow-2xl hover:shadow-amber-400/30 transition-all duration-500 hover:scale-110 shadow-glow"
-                  >
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400/30 to-orange-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <Icon name="ArrowDown" size={20} className="text-amber-400 group-hover:translate-y-2 group-hover:scale-110 transition-all duration-500 relative z-10" />
-                  </button>
-                </div>
-              </div>
-              
-              {/* Right Column - Enhanced Description */}
-              <div className="space-y-12 animate-fade-in" style={{animationDelay: '0.5s'}}>
-                <div className="space-y-10">
-                  <div className="relative p-8 backdrop-blur-glass rounded-2xl border border-slate-700/50">
-                    <div className="absolute -left-2 top-0 w-1 h-full bg-gradient-to-b from-amber-400 via-orange-500 to-amber-600 rounded-full"></div>
-                    <p className="text-xl text-slate-200 leading-relaxed font-light pl-6">
-                      Максима Лигал — команда талантливых юристов, которые более двадцати лет консультируют бизнес и частных клиентов в самых сложных областях права, обеспечивая индивидуальный подход к каждому делу.
-                    </p>
-                  </div>
-                  
-                  <div className="flex justify-end">
-                    <span className="text-slate-500 text-sm font-mono bg-slate-800/60 px-4 py-2 rounded-full border border-slate-700/50 backdrop-blur-sm">1.1</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section ref={heroRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('https://cdn.poehali.dev/files/b1488318-4d82-4d14-bce8-9cb11f8d2ec9.png')`,
+            transform: `translateY(${scrollY * 0.3}px)`,
+            filter: 'contrast(1.2) brightness(1.1) saturate(1.1)'
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-primary/60"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl">
+            <h1 className="md:text-8xl font-light text-white mb-8 leading-tight text-5xl">
+              ЗАКОН С<br />
+              <span className="font-bold">ИНДИВИДУАЛЬНЫМ</span><br />
+              ПОДХОДОМ
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl font-light leading-relaxed">
+              Астра Легал — юридическая фирма с более чем 20-летним опытом 
+              сопровождения бизнеса и частных клиентов.
+            </p>
+            <Button size="lg" className="h-14 px-8 text-lg bg-white text-primary hover:bg-gray-100">
+              Наши услуги
+              <Icon name="ArrowDown" size={20} className="ml-2" />
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Statistics Section - Enhanced */}
-      <section className="py-40 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
-        {/* Background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-amber-500/15 to-transparent rounded-full blur-3xl animate-gradient-pulse"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500/15 to-transparent rounded-full blur-3xl animate-gradient-pulse" style={{animationDelay: '1.5s'}}></div>
-        </div>
-        
-        <div className="container mx-auto px-6 relative z-10">
+      {/* Statistics Section */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-24">
-              <div ref={experienceCounter.elementRef} className="text-center group hover:scale-105 transition-all duration-500">
-                <div className="relative mb-8">
-                  <div className="text-9xl font-extralight bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-500">
-                    {experienceCounter.count}
-                  </div>
-                  <div className="absolute -inset-6 bg-gradient-to-br from-amber-500/25 to-orange-500/25 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+            <div className="grid md:grid-cols-3 gap-16">
+              <div ref={experienceCounter.elementRef} className="text-center">
+                <div className="text-7xl font-light text-primary mb-4">
+                  {experienceCounter.count}
                 </div>
-                <div className="text-2xl font-bold text-white mb-4 tracking-wider">ЛЕТ ОПЫТА</div>
-                <div className="text-slate-300 text-lg font-light">в юридических проектах</div>
+                <div className="text-2xl font-medium text-gray-800 mb-2">ЛЕТ ОПЫТА</div>
+                <div className="text-gray-600 text-lg bg-[#ffffff]">в юридических проектах</div>
               </div>
               
-              <div ref={avgExperienceCounter.elementRef} className="text-center group hover:scale-105 transition-all duration-500">
-                <div className="relative mb-8">
-                  <div className="text-9xl font-extralight bg-gradient-to-br from-blue-400 via-cyan-500 to-blue-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-500">
-                    {avgExperienceCounter.count}
-                  </div>
-                  <div className="absolute -inset-6 bg-gradient-to-br from-blue-500/25 to-cyan-500/25 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+              <div ref={avgExperienceCounter.elementRef} className="text-center">
+                <div className="text-7xl font-light text-primary mb-4">
+                  {avgExperienceCounter.count}
                 </div>
-                <div className="text-2xl font-bold text-white mb-4 tracking-wider">ЛЕТ СТАЖА</div>
-                <div className="text-slate-300 text-lg font-light">средний стаж наших юристов</div>
+                <div className="text-2xl font-medium text-gray-800 mb-2">ЛЕТ СТАЖА</div>
+                <div className="text-gray-600 text-lg">средний стаж наших юристов</div>
               </div>
               
-              <div ref={servicesCounter.elementRef} className="text-center group hover:scale-105 transition-all duration-500">
-                <div className="relative mb-8">
-                  <div className="text-9xl font-extralight bg-gradient-to-br from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-500">
-                    {servicesCounter.count}
-                  </div>
-                  <div className="absolute -inset-6 bg-gradient-to-br from-purple-500/25 to-pink-500/25 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+              <div ref={servicesCounter.elementRef} className="text-center">
+                <div className="text-7xl font-light text-primary mb-4">
+                  {servicesCounter.count}
                 </div>
-                <div className="text-2xl font-bold text-white mb-4 tracking-wider">НАПРАВЛЕНИЙ</div>
-                <div className="text-slate-300 text-lg font-light">юридического сопровождения</div>
+                <div className="text-2xl font-medium text-gray-800 mb-2">НАПРАВЛЕНИЙ</div>
+                <div className="text-gray-600 text-lg">юридического сопровождения</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section - Premium Enhanced */}
-      <section id="services" className="py-40 bg-slate-900 relative overflow-hidden">
-        {/* Background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-10 right-10 w-96 h-96 bg-gradient-to-br from-amber-500/8 to-transparent rounded-full blur-3xl animate-gradient-pulse"></div>
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-gradient-to-tr from-blue-500/8 to-transparent rounded-full blur-3xl animate-gradient-pulse" style={{animationDelay: '2s'}}></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.08),transparent_60%)]"></div>
-        </div>
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-28">
-            <h2 className="text-6xl md:text-7xl font-extralight text-white mb-12 tracking-tight">Наши услуги</h2>
-            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
-              Предоставляем полный спектр юридических услуг для успешного развития вашего бизнеса с использованием передовых правовых технологий и индивидуального подхода к каждому клиенту
+      {/* Services Section */}
+      <section id="services" className="py-32 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-20">
+            <h2 className="text-5xl font-light text-gray-800 mb-6">НАШИ УСЛУГИ</h2>
+            <p className="text-xl text-gray-700 font-light">
+              Комплексное юридическое сопровождение для бизнеса и частных лиц
             </p>
           </div>
           
           <div className="max-w-7xl mx-auto">
             <Tabs value={activeServiceType} onValueChange={setActiveServiceType} className="w-full">
-              <TabsList className="grid w-full grid-cols-2 mb-24 h-18 max-w-xl mx-auto bg-slate-800/60 border border-slate-700/50 backdrop-blur-sm rounded-2xl p-2">
-                <TabsTrigger value="business" className="text-lg py-4 px-6 font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-amber-500 data-[state=active]:to-orange-500 data-[state=active]:text-slate-900 data-[state=active]:shadow-xl data-[state=active]:shadow-amber-500/30 text-slate-300 hover:text-white transition-all duration-500 rounded-xl">
+              <TabsList className="grid w-full grid-cols-2 mb-16 h-16 max-w-md mx-auto">
+                <TabsTrigger value="business" className="text-lg py-4">
                   Для компаний
                 </TabsTrigger>
-                <TabsTrigger value="individual" className="text-lg py-4 px-6 font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:shadow-blue-500/30 text-slate-300 hover:text-white transition-all duration-500 rounded-xl">
+                <TabsTrigger value="individual" className="text-lg py-4">
                   Для физических лиц
                 </TabsTrigger>
               </TabsList>
               
               <TabsContent value="business" className="mt-0">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {businessServices.map((service, index) => (
-                    <Card key={index} className="group hover:shadow-2xl hover:shadow-amber-500/15 transition-all duration-500 border border-slate-700/50 shadow-xl hover:-translate-y-4 cursor-pointer bg-slate-800/60 backdrop-blur-sm hover:bg-gradient-to-br hover:from-amber-500/15 hover:to-orange-500/15 hover:border-amber-500/40 relative overflow-hidden rounded-2xl">
-                      {/* Hover gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-amber-500/8 to-orange-500/8 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      
-                      <CardHeader className="pb-6 relative z-10 p-8">
-                        <div className="mb-8">
-                          <div className="w-18 h-18 bg-slate-700/60 rounded-3xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-amber-500 group-hover:to-orange-500 group-hover:shadow-xl group-hover:shadow-amber-500/30 transition-all duration-500 group-hover:scale-110">
-                            <Icon name={service.icon} size={28} className="text-slate-300 group-hover:text-slate-900 transition-colors duration-500" />
+                    <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 cursor-pointer">
+                      <CardHeader className="pb-4">
+                        <div className="mb-4">
+                          <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            <Icon name={service.icon} size={24} className="text-primary group-hover:text-white" />
                           </div>
                         </div>
-                        <CardTitle className="text-lg font-bold text-white leading-tight group-hover:text-amber-100 transition-colors duration-500 tracking-tight">{service.name}</CardTitle>
+                        <CardTitle className="text-lg font-semibold text-gray-800 leading-tight">{service.name}</CardTitle>
                       </CardHeader>
-                      <CardContent className="relative z-10 p-8 pt-0">
-                        <p className="text-slate-400 group-hover:text-slate-300 mb-8 text-sm leading-relaxed transition-colors duration-500">{service.description}</p>
-                        <Button variant="ghost" size="sm" className="w-full justify-start p-0 h-auto text-amber-400 group-hover:text-amber-300 font-semibold transition-colors duration-500">
+                      <CardContent>
+                        <p className="text-gray-600 mb-4 text-sm">{service.description}</p>
+                        <Button variant="ghost" size="sm" className="w-full justify-start p-0 h-auto text-primary font-medium">
                           Подробнее
-                          <Icon name="ArrowRight" size={16} className="ml-3 group-hover:translate-x-2 transition-transform duration-500" />
+                          <Icon name="ArrowRight" size={16} className="ml-2" />
                         </Button>
                       </CardContent>
                     </Card>
@@ -421,25 +316,22 @@ const Index = () => {
               </TabsContent>
               
               <TabsContent value="individual" className="mt-0">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {individualServices.map((service, index) => (
-                    <Card key={index} className="group hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-500 border border-slate-700/50 shadow-xl hover:-translate-y-4 cursor-pointer bg-slate-800/60 backdrop-blur-sm hover:bg-gradient-to-br hover:from-blue-500/15 hover:to-cyan-500/15 hover:border-blue-500/40 relative overflow-hidden rounded-2xl">
-                      {/* Hover gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/8 to-cyan-500/8 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      
-                      <CardHeader className="pb-6 relative z-10 p-8">
-                        <div className="mb-8">
-                          <div className="w-18 h-18 bg-slate-700/60 rounded-3xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-cyan-500 group-hover:shadow-xl group-hover:shadow-blue-500/30 transition-all duration-500 group-hover:scale-110">
-                            <Icon name={service.icon} size={28} className="text-slate-300 group-hover:text-white transition-colors duration-500" />
+                    <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 cursor-pointer">
+                      <CardHeader className="pb-4">
+                        <div className="mb-4">
+                          <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            <Icon name={service.icon} size={24} className="text-primary group-hover:text-white" />
                           </div>
                         </div>
-                        <CardTitle className="text-lg font-bold text-white leading-tight group-hover:text-blue-100 transition-colors duration-500 tracking-tight">{service.name}</CardTitle>
+                        <CardTitle className="text-lg font-semibold text-gray-800 leading-tight">{service.name}</CardTitle>
                       </CardHeader>
-                      <CardContent className="relative z-10 p-8 pt-0">
-                        <p className="text-slate-400 group-hover:text-slate-300 mb-8 text-sm leading-relaxed transition-colors duration-500">{service.description}</p>
-                        <Button variant="ghost" size="sm" className="w-full justify-start p-0 h-auto text-blue-400 group-hover:text-blue-300 font-semibold transition-colors duration-500">
+                      <CardContent>
+                        <p className="text-gray-600 mb-4 text-sm">{service.description}</p>
+                        <Button variant="ghost" size="sm" className="w-full justify-start p-0 h-auto text-primary font-medium">
                           Подробнее
-                          <Icon name="ArrowRight" size={16} className="ml-3 group-hover:translate-x-2 transition-transform duration-500" />
+                          <Icon name="ArrowRight" size={16} className="ml-2" />
                         </Button>
                       </CardContent>
                     </Card>
@@ -451,53 +343,44 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Form Section - Luxurious Design */}
-      <section id="contact" className="py-40 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
-        {/* Background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-amber-500/12 to-transparent rounded-full blur-3xl animate-gradient-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-blue-500/12 to-transparent rounded-full blur-3xl animate-gradient-pulse" style={{animationDelay: '1s'}}></div>
-        </div>
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-24">
-              <h2 className="text-6xl md:text-7xl font-extralight text-white mb-10 tracking-tight">Получить консультацию</h2>
-              <p className="text-xl text-slate-300 font-light leading-relaxed max-w-3xl mx-auto">
-                Оставьте заявку и мы свяжемся с вами в течение 15 минут для персональной юридической консультации с экспертом в вашей области права
+      {/* Contact Form Section */}
+      <section id="contact" className="py-32 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-light text-gray-800 mb-6">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
+              <p className="text-xl text-gray-700 font-light">
+                Оставьте заявку и мы свяжемся с вами в течение 15 минут
               </p>
             </div>
             
-            <Card className="p-16 shadow-2xl border border-slate-700/50 bg-slate-800/60 backdrop-blur-sm relative overflow-hidden rounded-3xl">
-              {/* Card background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-700/40 to-slate-800/40"></div>
-              
-              <form className="space-y-10 relative z-10">
-                <div className="grid md:grid-cols-2 gap-10">
-                  <div className="space-y-4">
-                    <Label htmlFor="name" className="text-base font-semibold text-slate-200">Ваше имя</Label>
-                    <Input id="name" placeholder="Введите ваше имя" className="h-16 text-lg bg-slate-700/60 border-slate-600 text-white placeholder:text-slate-400 focus:border-amber-400 focus:ring-amber-400/30 transition-all duration-500 rounded-xl" />
+            <Card className="p-12 shadow-xl border-0">
+              <form className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                    <Label htmlFor="name" className="text-base font-medium">Ваше имя</Label>
+                    <Input id="name" placeholder="Введите ваше имя" className="h-14 text-base" />
                   </div>
-                  <div className="space-y-4">
-                    <Label htmlFor="phone" className="text-base font-semibold text-slate-200">Телефон</Label>
-                    <Input id="phone" placeholder="+7 (999) 123-45-67" className="h-16 text-lg bg-slate-700/60 border-slate-600 text-white placeholder:text-slate-400 focus:border-amber-400 focus:ring-amber-400/30 transition-all duration-500 rounded-xl" />
+                  <div className="space-y-3">
+                    <Label htmlFor="phone" className="text-base font-medium">Телефон</Label>
+                    <Input id="phone" placeholder="+7 (999) 123-45-67" className="h-14 text-base" />
                   </div>
                 </div>
-                <div className="space-y-4">
-                  <Label htmlFor="email" className="text-base font-semibold text-slate-200">Email</Label>
-                  <Input id="email" type="email" placeholder="your@email.com" className="h-16 text-lg bg-slate-700/60 border-slate-600 text-white placeholder:text-slate-400 focus:border-amber-400 focus:ring-amber-400/30 transition-all duration-500 rounded-xl" />
+                <div className="space-y-3">
+                  <Label htmlFor="email" className="text-base font-medium">Email</Label>
+                  <Input id="email" type="email" placeholder="your@email.com" className="h-14 text-base" />
                 </div>
-                <div className="space-y-4">
-                  <Label htmlFor="message" className="text-base font-semibold text-slate-200">Описание вашего вопроса</Label>
+                <div className="space-y-3">
+                  <Label htmlFor="message" className="text-base font-medium">Описание вашего вопроса</Label>
                   <Textarea 
                     id="message" 
-                    placeholder="Расскажите о вашей ситуации подробнее..." 
-                    className="min-h-44 resize-none text-lg bg-slate-700/60 border-slate-600 text-white placeholder:text-slate-400 focus:border-amber-400 focus:ring-amber-400/30 transition-all duration-500 rounded-xl leading-relaxed"
+                    placeholder="Расскажите о вашей ситуации..." 
+                    className="min-h-36 resize-none text-base"
                   />
                 </div>
-                <Button className="w-full h-18 text-xl font-bold bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-slate-900 shadow-2xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 transition-all duration-500 border-0 rounded-xl">
-                  <Icon name="Send" size={24} className="mr-4" />
-                  Отправить заявку
+                <Button className="w-full h-16 text-lg font-medium">
+                  <Icon name="Send" size={20} className="mr-3" />
+                  ОТПРАВИТЬ ЗАЯВКУ
                 </Button>
               </form>
             </Card>
@@ -505,50 +388,50 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer - Elegant & Modern */}
-      <footer className="bg-slate-900 text-white py-24 border-t border-slate-800">
+      {/* Footer */}
+      <footer className="bg-primary text-white py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-16 mb-20">
+            <div className="grid md:grid-cols-4 gap-12 mb-16">
               <div className="md:col-span-1">
-                <div className="flex items-center gap-3 mb-8">
-                  <Icon name="Scale" size={36} className="text-amber-400" />
-                  <h3 className="text-3xl font-bold tracking-tight">МАКСИМА ЛИГАЛ</h3>
+                <div className="flex items-center gap-3 mb-6">
+                  <Icon name="Scale" size={32} className="text-white" />
+                  <h3 className="text-2xl font-bold">АСТРА ЛЕГАЛ</h3>
                 </div>
-                <p className="text-slate-400 text-lg font-light leading-relaxed">Современные правовые решения для успешного бизнеса</p>
+                <p className="text-white/80 text-lg">Современные правовые решения</p>
               </div>
               
               <div>
-                <h4 className="font-bold mb-8 text-xl tracking-wide">КОНТАКТЫ</h4>
-                <div className="space-y-4 text-slate-300">
-                  <p className="flex items-center gap-3 hover:text-amber-400 transition-colors duration-300">
-                    <Icon name="Phone" size={18} />
+                <h4 className="font-semibold mb-6 text-lg">КОНТАКТЫ</h4>
+                <div className="space-y-3 text-white/80">
+                  <p className="flex items-center gap-2">
+                    <Icon name="Phone" size={16} />
                     8-918-480-01-67
                   </p>
-                  <p className="flex items-center gap-3 hover:text-amber-400 transition-colors duration-300">
-                    <Icon name="Mail" size={18} />
+                  <p className="flex items-center gap-2">
+                    <Icon name="Mail" size={16} />
                     astartes.lawyers@gmail.com
                   </p>
-                  <p className="flex items-center gap-3 hover:text-amber-400 transition-colors duration-300">
-                    <Icon name="MapPin" size={18} />
+                  <p className="flex items-center gap-2">
+                    <Icon name="MapPin" size={16} />
                     г. Краснодар, ул. Калинина, 190
                   </p>
                 </div>
               </div>
               
               <div>
-                <h4 className="font-bold mb-8 text-xl tracking-wide">УСЛУГИ</h4>
-                <div className="space-y-4 text-slate-300">
-                  <p className="hover:text-amber-400 transition-colors duration-300 cursor-pointer">Корпоративное право</p>
-                  <p className="hover:text-amber-400 transition-colors duration-300 cursor-pointer">Арбитражные споры</p>
-                  <p className="hover:text-amber-400 transition-colors duration-300 cursor-pointer">Недвижимость</p>
-                  <p className="hover:text-amber-400 transition-colors duration-300 cursor-pointer">Семейное право</p>
+                <h4 className="font-semibold mb-6 text-lg">УСЛУГИ</h4>
+                <div className="space-y-3 text-white/80">
+                  <p>Корпоративное право</p>
+                  <p>Арбитражные споры</p>
+                  <p>Недвижимость</p>
+                  <p>Семейное право</p>
                 </div>
               </div>
               
               <div>
-                <h4 className="font-bold mb-8 text-xl tracking-wide">РЕЖИМ РАБОТЫ</h4>
-                <div className="space-y-4 text-slate-300">
+                <h4 className="font-semibold mb-6 text-lg">РЕЖИМ РАБОТЫ</h4>
+                <div className="space-y-3 text-white/80">
                   <p>Пн-Пт: 9:00 - 20:00</p>
                   <p>Сб: 10:00 - 16:00</p>
                   <p>Вс: выходной</p>
@@ -556,12 +439,11 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="border-t border-slate-700/50 pt-10">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                <p className="text-slate-400 font-light">© 2025 МАКСИМА ЛИГАЛ. Все права защищены.</p>
-                <div className="flex gap-10 text-slate-400">
-                  <a href="#" className="hover:text-amber-400 transition-colors duration-300 font-light">Политика конфиденциальности</a>
-                  <a href="#" className="hover:text-amber-400 transition-colors duration-300 font-light">Пользовательское соглашение</a>
+            <div className="border-t border-white/20 pt-8">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p className="text-white/80">© 2025 АСТРА ЛЕГАЛ. Все права защищены.</p>
+                <div className="flex gap-6 text-white/80">
+                  <a href="#" className="hover:text-white transition-colors">Политика конфиденциальности</a>
                 </div>
               </div>
             </div>
