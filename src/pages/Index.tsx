@@ -229,7 +229,14 @@ const Index = () => {
               Астра Легал — юридическая фирма с более чем 20-летним опытом 
               сопровождения бизнеса и частных клиентов.
             </p>
-            <Button size="lg" className="h-14 px-8 text-lg bg-white text-primary hover:bg-gray-100">
+            <Button 
+              size="lg" 
+              className="h-14 px-8 text-lg bg-white text-primary hover:bg-gray-100"
+              onClick={() => {
+                const servicesSection = document.getElementById('services');
+                servicesSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Наши услуги
               <Icon name="ArrowDown" size={20} className="ml-2" />
             </Button>
