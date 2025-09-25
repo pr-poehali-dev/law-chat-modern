@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -11,6 +12,7 @@ const Index = () => {
   const [activeServiceType, setActiveServiceType] = useState('business');
   const [scrollY, setScrollY] = useState(0);
   const heroRef = useRef<HTMLElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -64,49 +66,49 @@ const Index = () => {
       name: 'Недвижимость и строительство', 
       description: 'Сопровождение сделок с недвижимостью и строительными проектами',
       icon: 'Building',
-      link: '/services/real-estate'
+      link: '/services/RealEstate'
     },
     { 
       name: 'IP/IT', 
       description: 'Защита интеллектуальной собственности и IT-права',
       icon: 'Code',
-      link: '/services/ip-it'
+      link: '/services/IPIT'
     },
     { 
       name: 'Несостоятельность (банкротство)', 
       description: 'Процедуры банкротства и антикризисное управление',
       icon: 'AlertTriangle',
-      link: '/services/bankruptcy'
+      link: '/services/Bankruptcy'
     },
     { 
       name: 'Разрешение споров', 
       description: 'Арбитражное и судебное представительство',
       icon: 'Scale',
-      link: '/services/disputes'
+      link: '/services/Disputes'
     },
     { 
       name: 'Общие вопросы', 
       description: 'Комплексные юридические услуги для бизнеса',
       icon: 'Briefcase',
-      link: '/services/general'
+      link: '/services/Corporate'
     },
     { 
       name: 'Корпоративное право', 
       description: 'Сопровождение корпоративных сделок и M&A',
       icon: 'Building2',
-      link: '/services/corporate'
+      link: '/services/Corporate'
     },
     { 
       name: 'Налоговое и административное право', 
       description: 'Налоговое планирование и административные споры',
       icon: 'Calculator',
-      link: '/services/tax'
+      link: '/services/Tax'
     },
     { 
       name: 'Уголовно-правовая защита', 
       description: 'Защита интересов в уголовном процессе',
       icon: 'Shield',
-      link: '/services/criminal'
+      link: '/services/Criminal'
     }
   ];
   
@@ -115,73 +117,73 @@ const Index = () => {
       name: 'Разрешение конфликтов', 
       description: 'Досудебное и судебное урегулирование споров',
       icon: 'HandHeart',
-      link: '/services/conflicts'
+      link: '/services/individual/Conflicts'
     },
     { 
       name: 'Операции с личными активами', 
       description: 'Структурирование личных активов и инвестиций',
       icon: 'TrendingUp',
-      link: '/services/personal-assets'
+      link: '/services/individual/PersonalAssets'
     },
     { 
       name: 'Налогообложение физических лиц', 
       description: 'Налоговое планирование для физических лиц',
       icon: 'Calculator',
-      link: '/services/personal-tax'
+      link: '/services/individual/PersonalTax'
     },
     { 
       name: 'Персональный комплаенс', 
       description: 'Соблюдение требований законодательства',
       icon: 'FileCheck',
-      link: '/services/compliance'
+      link: '/services/individual/Compliance'
     },
     { 
       name: 'Защита личных активов и вопросы наследования', 
       description: 'Защита имущества и планирование наследства',
       icon: 'Heart',
-      link: '/services/inheritance-protection'
+      link: '/services/individual/InheritanceProtection'
     },
     { 
       name: 'Семейные споры', 
       description: 'Развод, алименты, раздел имущества',
       icon: 'Users',
-      link: '/services/family'
+      link: '/services/individual/Family'
     },
     { 
       name: 'Наследственные споры', 
       description: 'Оспаривание завещаний и наследственные права',
       icon: 'FileText',
-      link: '/services/inheritance-disputes'
+      link: '/services/individual/InheritanceDisputes'
     },
     { 
       name: 'Жилищные споры', 
       description: 'Споры с УК, ТСЖ и по недвижимости',
       icon: 'Home',
-      link: '/services/housing'
+      link: '/services/individual/Housing'
     },
     { 
       name: 'Споры, связанные с защитой прав потребителей', 
       description: 'Возврат товаров, компенсации ущерба',
       icon: 'ShoppingCart',
-      link: '/services/consumer'
+      link: '/services/individual/Consumer'
     },
     { 
       name: 'Трудовые споры', 
       description: 'Защита трудовых прав и взыскание зарплат',
       icon: 'Briefcase',
-      link: '/services/labor'
+      link: '/services/individual/Labor'
     },
     { 
       name: 'Другие имущественные и гражданско-правовые споры', 
       description: 'Возмещение ущерба, взыскание долгов',
       icon: 'Scale',
-      link: '/services/civil'
+      link: '/services/individual/Civil'
     },
     { 
       name: 'Наследственное планирование', 
       description: 'Комплексное планирование передачи активов',
       icon: 'FileHeart',
-      link: '/services/estate-planning'
+      link: '/services/individual/EstatePlanning'
     }
   ];
 
@@ -301,7 +303,11 @@ const Index = () => {
               <TabsContent value="business" className="mt-0">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {businessServices.map((service, index) => (
-                    <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 cursor-pointer">
+                    <Card 
+                      key={index} 
+                      className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 cursor-pointer"
+                      onClick={() => navigate(service.link)}
+                    >
                       <CardHeader className="pb-4">
                         <div className="mb-4">
                           <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
@@ -325,7 +331,11 @@ const Index = () => {
               <TabsContent value="individual" className="mt-0">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {individualServices.map((service, index) => (
-                    <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 cursor-pointer">
+                    <Card 
+                      key={index} 
+                      className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:-translate-y-2 cursor-pointer"
+                      onClick={() => navigate(service.link)}
+                    >
                       <CardHeader className="pb-4">
                         <div className="mb-4">
                           <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
