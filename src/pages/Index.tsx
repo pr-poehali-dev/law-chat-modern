@@ -191,11 +191,14 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Icon name="Scale" size={32} className="text-primary" />
-              <h1 className="text-2xl font-bold text-primary">АСТРА ЛЕГАЛ</h1>
+        <div className="container mx-auto px-6 py-12">
+          <div className="flex items-center justify-between h-80">
+            <div className="flex items-center">
+              <img 
+                src="https://cdn.poehali.dev/files/b824de58-6898-45c8-817a-6cc8cb4c3906.png" 
+                alt="ASTRA LEGAL" 
+                className="h-80 w-auto object-contain"
+              />
             </div>
             <nav className="hidden md:flex items-center gap-8">
               <a href="#services" className="text-gray-700 hover:text-primary transition-colors font-medium">Услуги</a>
@@ -210,7 +213,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex items-center pt-96 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
