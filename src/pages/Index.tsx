@@ -191,7 +191,7 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div className="container mx-auto px-6 py-12">
+        <div className="container mx-auto px-6 py-0">
           <div className="flex items-center justify-between h-80">
             <div className="flex items-center">
               <img 
